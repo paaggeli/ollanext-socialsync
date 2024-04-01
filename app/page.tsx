@@ -1,5 +1,11 @@
+ 'use client'
+import Sidebar from './_components/sidebar/sidebar'
+import PromptArea from './_components/prompt/prompt-area'
 export default function Home() {
   return (
-  <h1>OllaNext SocialSync</h1>
+    <div className="flex">
+      <Sidebar />
+      <PromptArea />
+    </div>
   )
 }
