@@ -13,19 +13,23 @@ export default function Sidebar() {
       <div className="flex items-center justify-center h-16 px-2.5 bg-neutral-800">
         <h1 className="text-xl">OllaNext SocialSync</h1>
       </div>
-      {/* this will not going to be nav */}
+
       <div className="flex-grow mt-8 justify-center text-center">
           <NewChatButton />
           <ChatList chats={chats} />
       </div>
-      {/* botton list */}
+
       <div className="h-18 flex flex-col items-center justify-center text-center">
         <button className="py-1 hover:font-semibold focus:outline-none">Settings</button>
-        <div className="py-2"><p className="text-xs hover:font-semibold"><a href="https://github.com/your-username/your-repository-name/contributing">Contributing on GitHub!</a></p></div>
+        <div className="py-2">
+          <p className="text-xs hover:font-semibold"><a href="https://github.com/your-username/your-repository-name/contributing">Contributing on GitHub!</a></p>
         </div>
-        <div className="flex justify-evenly pb-2">
+
+        <div className="flex justify-evenly pb-2 w-full">
           <a href="#"><FaXTwitter /></a> <a href="#"><FaFacebookF /></a> <a href="#"><FaGithub /></a> <a href="#"><RiLinkedinFill /></a>
         </div>
+      </div>
+
     </div>
   );
 }
