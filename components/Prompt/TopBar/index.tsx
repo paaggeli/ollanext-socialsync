@@ -1,5 +1,5 @@
+import EditableChatTitle from '@/components/Prompt/TopBar/EditableChatTitle';
 import { useState, useEffect, useRef } from 'react';
-import EditableChatTitle from './editable-chat-title';
 
 export default function TopBar() {
   const [isOpen, setIsOpen] = useState(false);

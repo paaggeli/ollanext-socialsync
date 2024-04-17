@@ -1,6 +1,5 @@
-import NavLink from './navigation/navlink';
-import NewChatButton from './newChatButton';
-import ChatList from './ChatList';
+import NewChatButton from '@/components/Sidebar/NewChatButton';
+import ChatList from '@/components/Sidebar/ChatList';
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";

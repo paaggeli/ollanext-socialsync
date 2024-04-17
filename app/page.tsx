@@ -1,6 +1,6 @@
 'use client'
-import Sidebar from './_components/sidebar/sidebar'
-import PromptArea from './_components/prompt/prompt-area'
+import Sidebar from '@/components/Sidebar'
+import PromptArea from '@/components/Prompt'
 export default function Home() {
   return (
     <div className="flex">

@@ -1,6 +1,6 @@
-import TopBar from "./topbar";
-import Response from "./response";
-import PromptInput from "./prompt-input";
+import TopBar from "@/components/Prompt/TopBar";
+import Response from "@/components/Prompt/Response";
+import PromptInput from "@/components/Prompt/PromptInput";
 
 export default function PromptArea() {
     return(

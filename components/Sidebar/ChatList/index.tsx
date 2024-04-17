@@ -1,4 +1,4 @@
-import ChatItem from './ChatItem';
+import ChatItem from '@/components/Sidebar/ChatList/ChatItem';
 
 const ChatList = ({chats}) => {
   return (
