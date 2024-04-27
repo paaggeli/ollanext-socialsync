@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { IoIosSend } from "react-icons/io";
+import { Button } from '@/components/ui/button';
 export default function PromptInput() {
   const [text, setText] = useState('');
 
@@ -22,13 +23,14 @@ export default function PromptInput() {
     <div className="flex align-items justify-center">
       <div className="promptInput relative w-2/3 flex items-center justify-between p-2 pr-0 mb-4 border border-neutral-700 rounded-md">
         <textarea 
-          className="m-0 w-full resize-none p-2 mr-16 border-0 bg-transparent overflow-hidden outline-none scrollbar" 
+          className="m-0 w-full resize-none p-2 pr-[70px] border-0 bg-transparent overflow-hidden outline-none scrollbar" 
           rows="1" 
           value={text} 
           onChange={handleChange} 
           placeholder="Type your prompt here...">
         </textarea>
-        <button className="absolute bottom-[0.7rem] right-3 ml-2 px-4 py-2 text-neutral-400 rounded hover:bg-neutral-700 hover:font-semibold border border-neutral-400"><IoIosSend /></button>
+        <Button variant="outline" size="icon" className="absolute bottom-[0.7rem] right-3 ml-2 px-4"><IoIosSend /></Button>
+        {/* <button className="absolute bottom-[0.7rem] right-3 ml-2 px-4 py-2 text-neutral-400 rounded hover:bg-neutral-700 hover:font-semibold border border-neutral-400"><IoIosSend /></button> */}
       </div>
     </div>
   );
