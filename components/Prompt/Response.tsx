@@ -1,4 +1,4 @@
-export default function Response() {
+export default function Response({content}) {
   return (
     <div className="w-full px-6 border-b border-b-neutral-700 pb-4 mb-8">
         
@@ -6,7 +6,7 @@ export default function Response() {
         <img className="w-12 h-12 rounded-full mr-4" src="/ai1.jpg" />
         <div>
           <h3 className="text-lg">You</h3>
-          <h3 className="text-xl font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor ac tortor ac accumsan. Sed dictum arcu sed sollicitudin venenatis. Suspendisse maximus id nibh non imperdiet. In hac habitasse platea dictumst?</h3>
+          <h3 className="text-xl font-semibold">{content}</h3>
         </div>
       </div>
         
