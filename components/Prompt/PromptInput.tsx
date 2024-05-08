@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { IoIosSend } from "react-icons/io";
 import { Button } from '@/components/ui/button';
-export default function PromptInput() {
+
+export default function PromptInput({onInputSubmit}) {
   const [text, setText] = useState('');
 
   const maxHeight = 200;
@@ -19,18 +20,34 @@ export default function PromptInput() {
     }
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onInputSubmit(text);
+    setText('');
+  }
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      handleSubmit(event);
+    }
+  };
+
   return (
     <div className="flex align-items justify-center">
       <div className="promptInput relative w-2/3 flex items-center justify-between p-2 pr-0 mb-4 border border-neutral-700 rounded-md">
-        <textarea 
-          className="m-0 w-full resize-none p-2 pr-[70px] border-0 bg-transparent overflow-hidden outline-none scrollbar" 
-          rows="1" 
-          value={text} 
-          onChange={handleChange} 
-          placeholder="Type your prompt here...">
-        </textarea>
-        <Button variant="outline" size="icon" className="absolute bottom-[0.7rem] right-3 ml-2 px-4"><IoIosSend /></Button>
-        {/* <button className="absolute bottom-[0.7rem] right-3 ml-2 px-4 py-2 text-neutral-400 rounded hover:bg-neutral-700 hover:font-semibold border border-neutral-400"><IoIosSend /></button> */}
+        <form className="w-full" onSubmit={handleSubmit}>
+          <textarea 
+            className="m-0 w-full resize-none p-2 pr-[70px] border-0 bg-transparent overflow-hidden outline-none scrollbar" 
+            rows="1" 
+            value={text} 
+            onChange={handleChange} 
+            onKeyDown={handleKeyPress}
+            placeholder="Type your prompt here...">
+          </textarea>
+          <Button type="submit" variant="outline" size="icon" className="absolute bottom-[0.7rem] right-3 ml-2 px-4"><IoIosSend /></Button>
+          {/* <button type="submit" className="absolute bottom-[0.7rem] right-3 ml-2 px-4 py-2 text-neutral-400 rounded hover:bg-neutral-700 hover:font-semibold border border-neutral-400"><IoIosSend /></button> */}
+        </form>
       </div>
     </div>
   );
